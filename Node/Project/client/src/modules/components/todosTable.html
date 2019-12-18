@@ -1,0 +1,38 @@
+<template>
+  <button class="btn btn-primary" click.trigger="newTodo()" style="margin-bottom:10px;">Create Todo</button>
+  <!-- <button class="btn btn-primary" click.trigger="newTodo()" style="margin-bottom:10px;">Create Todo</button> -->
+  <table class="table table-light">
+      <thead>
+          <tr>
+              <th colspan="3">
+                  <div class="checkbox leftMargin">
+                      <label>
+                          <input checked.bind="isCheckedCompleted" type="checkbox"> Filter out Completed Todos
+                      </label>
+                  </div>
+              </th>
+          </tr>
+          <tr>
+              <th scope="col">Todo</th>
+              <th scope="col">Status</th>
+              <th scope="col">Date Due</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+
+          <tr repeat.for="todo of todo.todosArray | filterTodos:isCheckedCompleted">
+              <td scope="row" click.delegate="editTodo(todo)">${todo.todo}</td>
+              <td><select change.delegate="updateTodo(todo)" value.bind="todo.status" class="form-control"
+                      id="todoStatus">
+                      <option repeat.for="status of statuses" value.bind="status">${status}</option>
+                  </select></td>
+              <td>${todo.dateDue | dateFormat}</td>
+              <td>
+                  <button click.trigger="deleteTodo(todo)" type="button" class="btn btn-danger btn-sm">Delete</button>
+              </td>
+          </tr>
+            
+      </tbody>
+  </table>
+</template>
