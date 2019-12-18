@@ -1,0 +1,39 @@
+<template>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Widgets Universe!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#users">Users <span class="sr-only">(current)</span></a>
+            </li>
+                     <li class="nav-item">
+                <a class="nav-link" href="#widgets">Widgets</a>
+            </li>
+                    <li class="nav-item">
+                <a class="nav-link" href="#logout">Logout</a>
+            </li>
+                 
+        </ul>
+        <div show.bind="!authenticated">
+            <form class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="staticEmail2" class="sr-only">Email</label>
+                    <input value.bind="email" type="text" class="form-control" id="staticEmail2"
+                        placeholder="email@example.com">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input value.bind="password" type="password" class="form-control" id="inputPassword2"
+                        placeholder="Password">
+                </div>
+                <button type="submit" click.trigger="login()" class="btn btn-primary mb-2">Confirm identity</button>
+                <span style="margin-left: 20px;" show.bind="loginError">${loginError}</span>
+            </form>
+        </div>   
+    </div>
+      </nav>
+</template>

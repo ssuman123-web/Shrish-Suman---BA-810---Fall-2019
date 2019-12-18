@@ -1,0 +1,17 @@
+<template>
+    <style>
+      .aurelia-flatpickr {
+        background-color: white !important;
+      }
+      .disable{
+        background-color: #eeeeee;
+      }
+    </style>
+    <require from="flatpickr/flatpickr.css"></require>
+     <div class="input-group aurelia-flatpickr">
+      <input type="text" class="aurelia-flatpickr form-control enable" placeholder="Select date" data-input>
+      <span class="input-group-btn">
+        <button style="height:39px;" class="btn btn-default" type="button" data-clear><i class="fa fa-trash fa-border"></i></button>
+      </span>
+  </div>
+</template>

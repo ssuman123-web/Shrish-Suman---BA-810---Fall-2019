@@ -8,4 +8,4 @@ export class DateFormatValueConverter {
 
         return dateFormatted;
     }
-}  
+}

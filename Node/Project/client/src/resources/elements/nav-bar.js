@@ -1,10 +1,10 @@
-import {inject} from 'aurelia-framework';
-import {Router} from 'aurelia-router';
-import {AuthService} from 'aurelia-auth';
+import { inject } from 'aurelia-framework';
+import { Router } from 'aurelia-router';
+import { AuthService } from 'aurelia-auth';
 
-@inject(Router,AuthService)
+@inject(Router, AuthService)
 export class NavBar {
-    constructor(router,auth) {
+    constructor(router, auth) {
         //this.authenticated = false;
         this.router = router;
         this.auth = auth;
@@ -14,7 +14,7 @@ export class NavBar {
     }
 
     attached() {
-        $('.navbar-nav a').on('click', function () {
+        $('.navbar-nav a').on('click', function() {
             $('.navbar-nav').find('li.active').removeClass('active');
             $(this).parent('li').addClass('active');
         });
@@ -48,7 +48,7 @@ export class NavBar {
         this.authenticated = this.auth.isAuthenticated();
     }
 
-    openRegisterNewUser(){
+    openRegisterNewUser() {
         this.router.navigate('users');
     }
 

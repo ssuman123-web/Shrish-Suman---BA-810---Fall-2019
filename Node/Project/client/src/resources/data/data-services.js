@@ -18,7 +18,7 @@ export class DataServices {
                 })
                 .withInterceptor({
                     request(request) {
-                        
+
                         console.log('Requesting ${request.method} ${request.url}');
                         return request;
                     },
@@ -43,19 +43,19 @@ export class DataServices {
     }
 
     post(content, url) {
-		return this.httpClient
-			.fetch(url, {
-				method: 'post',
-				body: json(content)
-			})
-			.then(response => response.json())
-			.then(object => {
-				return object;
-			})
-			.catch(error => {
-				return error;
-			});
-	}
+        return this.httpClient
+            .fetch(url, {
+                method: 'post',
+                body: json(content)
+            })
+            .then(response => response.json())
+            .then(object => {
+                return object;
+            })
+            .catch(error => {
+                return error;
+            });
+    }
 
     put(content, url) {
         return this.httpClient
